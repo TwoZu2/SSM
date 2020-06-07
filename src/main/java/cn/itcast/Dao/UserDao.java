@@ -10,6 +10,7 @@ import javax.jws.soap.SOAPBinding;
 import java.util.List;
 @Repository
 public interface UserDao {
+
     List<User> findAll();
 
     boolean saveUser(User user);

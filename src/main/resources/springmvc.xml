@@ -14,10 +14,10 @@
     <context:component-scan base-package="cn.itcast">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/views/"/>
-        <property name="suffix" value=".jsp"/>
-    </bean>
+<!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+<!--        <property name="prefix" value="/WEB-INF/views/"/>-->
+<!--        <property name="suffix" value=".jsp"/>-->
+<!--    </bean>-->
 
 
     <!--配置的视图解析器对象-->
@@ -43,27 +43,27 @@
 
     <mvc:default-servlet-handler/>
     
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <!-- 先匹配所有路径，然后排除不需要检查的路径 -->
-            <mvc:mapping path="/**"/>
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            &lt;!&ndash; 先匹配所有路径，然后排除不需要检查的路径 &ndash;&gt;-->
+<!--            <mvc:mapping path="/**"/>-->
 
-            <!-- 与登录相关的请求 -->
-            <mvc:exclude-mapping path="/*.html"/>
-            <mvc:exclude-mapping path="/login"/>
+<!--            &lt;!&ndash; 与登录相关的请求 &ndash;&gt;-->
+<!--            <mvc:exclude-mapping path="/*.html"/>-->
+<!--            <mvc:exclude-mapping path="login"/>-->
 
 
 
-            <!-- 以下是静态资源 -->
-            <mvc:exclude-mapping path="/layui/**" />
-            <mvc:exclude-mapping path="/css/**" />
-            <mvc:exclude-mapping path="/font/**" />
-            <mvc:exclude-mapping path="/js/**" />
-            <mvc:exclude-mapping path="/datepicker/**" />
+<!--            &lt;!&ndash; 以下是静态资源 &ndash;&gt;-->
+<!--            <mvc:exclude-mapping path="/layui/**" />-->
+<!--            <mvc:exclude-mapping path="/css/**" />-->
+<!--            <mvc:exclude-mapping path="/font/**" />-->
+<!--            <mvc:exclude-mapping path="/js/**" />-->
+<!--            <mvc:exclude-mapping path="/datepicker/**" />-->
 
-            <!-- 用户是否已经登录的检查bean -->
-            <bean class="cn.itcast.Interceptor.loginInterceptor"/>
+<!--            &lt;!&ndash; 用户是否已经登录的检查bean &ndash;&gt;-->
+<!--            <bean class="cn.itcast.Interceptor.loginInterceptor"/>-->
 
-        </mvc:interceptor>
-    </mvc:interceptors>
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
 </beans>
