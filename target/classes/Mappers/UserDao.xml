@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.itcast.Dao.UserDao">
+
+
+
+    <resultMap id="User" type="cn.itcast.Entity.User">
+
+        <id column="uid" property="uid" />
+
+        <result column="uname" property="username" jdbcType="VARCHAR"/>
+
+        <result column="upassword" property="password" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+
+
+    <select id="findAll"  resultMap="User">
+        select * from user
+
+    </select>
+ <select id="findChoss" resultMap="User">
+<where>
+    select * from user where
+    <if test="uid!=null and uid!=''">
+        uid = #{uid} and
+    </if>
+    <if test="username!=null and username!=''">
+        uname = #{username} and
+    </if>
+    <if test="password!=null and password!=''">
+        upassword = #{password}
+    </if>
+</where>
+
+ </select>
+
+
+<delete id="delectUser">
+
+        delete from user where uid = #{uid}
+
+
+</delete>
+
+<update id="updateUser">
+    update user
+    <set>
+
+        <if test="username != null">
+            uname = #{username},
+        </if>
+        <if test="password != null">
+            upassword = #{password},
+        </if>
+    </set>
+
+        where uid = #{uid}
+
+</update>
+
+<insert id="saveUser">
+    insert into user(uname,upassword) values (#{username},#{password})
+</insert>
+
+
+
+
+
+
+
+</mapper>
