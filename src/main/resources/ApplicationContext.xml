@@ -31,7 +31,6 @@
     <!--配置dao接口所在包-->
     <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="cn.itcast.Dao"/>
-
     </bean>
 
     <!--配置Spring框架声明式事务管理-->

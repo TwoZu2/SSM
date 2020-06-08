@@ -15,8 +15,6 @@
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>*.html</url-pattern>
-
-
   </servlet-mapping>
 
   <!--解决浏览器form表单只支持GET与POST请求，而DELETE、PUT等method并不支持-->
